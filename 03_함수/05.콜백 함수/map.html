@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const array1 = [1, 4, 9, 16]
+         let val1 = array1.map(function (ele, idx, arr) {
+            return ele * 2
+         })
+         let val2 = array1.map((ele) => {
+            return ele * 2
+         })
+         console.log(val1)
+         console.log(val2)
+      </script>
+   </body>
+</html>

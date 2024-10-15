@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function nonSpread(...items) {
+            console.log(items)
+         }
+
+         function useSpread(...items) {
+            console.log(items)
+         }
+
+         const array = [1, 2, 3, 4]
+         nonSpread(array[0], array[1], array[2], array[3])
+         useSpread(...array)
+         //  useSpread(array)
+         // 전개연산자를 사용하지 않을시 배열 인덱스 0에 배열이 전부 들어가서 [0][0] 형태로 사용해야 한다.
+      </script>
+   </body>
+</html>
