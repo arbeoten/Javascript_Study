@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         // 프로토타입 function명은 항상 대문자로 시작
+         function Car(color, seater) {
+            this.color = color
+            this.seater = seater
+         }
+         Car.prototype.run = function (status) {
+            if (status) {
+               return `자동차가 달립니다`
+            }
+         }
+         Car.prototype.stop = function (status) {
+            if (status) {
+               return `자동차가 멈춥니다`
+            }
+         }
+
+         const myCar1 = new Car('블랙', 4)
+         console.log(myCar1.run(true))
+      </script>
+   </body>
+</html>

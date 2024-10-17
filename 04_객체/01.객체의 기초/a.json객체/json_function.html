@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         const iPhone15 = {
+            model: 'iPhone 15',
+            manufacturer: 'Apple',
+            releaseYear: 2023,
+            colors: ['Black', 'Blue', 'Pink', 'Yellow', 'Green'],
+         }
+         console.log(iPhone15)
+         document.write(iPhone15)
+         document.write('<hr>')
+         const jsonToString = JSON.stringify(iPhone15)
+         document.write(jsonToString)
+         console.log(jsonToString)
+
+         // 정돈
+         const jsonToString2 = JSON.stringify(iPhone15, null, 2)
+         document.write('<hr>')
+         document.write(jsonToString2)
+         console.log(jsonToString2)
+
+         // 문자열 -> JSON
+         const iPhone15_2 = '{"model":"iPhone 15","manufacturer":"Apple","releaseYear":2023,"colors":["Black","Blue","Pink","Yellow","Green"]}'
+         const stringToJson = JSON.parse(iPhone15_2)
+         document.write(stringToJson)
+         console.log(stringToJson)
+      </script>
+   </body>
+</html>

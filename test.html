@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let x = 5525
+         let y = 1255
+         let xArr = []
+         let yArr = []
+         let arr = []
+         while (x >= 1) {
+            xArr.push(Math.floor(x % 10))
+            x = x / 10
+         }
+         while (y >= 1) {
+            yArr.push(Math.floor(y % 10))
+            y = y / 10
+         }
+         console.log(xArr)
+         console.log(yArr)
+         xArr.forEach((num) => {
+            if (yArr.indexOf(num) != -1) {
+               yArr.splice(yArr.indexOf(num), 1)
+               arr.push(num)
+            }
+         })
+         arr.sort().reverse()
+         let answer = ''
+         for (i of arr) {
+            answer += i
+         }
+         if (answer == '') answer = '-1'
+         if (answer[0] == '0') answer = '0'
+         console.log(answer)
+      </script>
+   </body>
+</html>

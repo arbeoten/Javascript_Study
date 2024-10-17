@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         var t = 'Hello Thank you good luck to you'
+
+         for (i in t) {
+            document.write(`${t[i]} : [${i}]<br>`)
+         }
+         console.log(t.charAt(16))
+         console.log(t.indexOf('you'))
+         // 인덱스 16번이후에서 검색
+         console.log(t.indexOf('you', 16))
+         console.log('')
+         // 찾는 문자가 있는 인덱스번호(indexof와 유사)
+         // search는 정규표현식 사용가능, indexof는 검색 시작 위치 변경가능
+         console.log(t.search('you'))
+         // 문자열을 잘라냄 (시작인덱스,끝인덱스직전)
+         console.log(t.substring(6, 12))
+         console.log('')
+         console.log(t.replace('you', 'me'))
+
+         var s = t.split(' ')
+         console.log(s)
+      </script>
+   </body>
+</html>
