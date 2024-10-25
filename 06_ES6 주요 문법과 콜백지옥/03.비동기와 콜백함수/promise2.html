@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            // promise를 사용한 함수는 비동기
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  console.log('Task done')
+                  resolve('Task result') // resolve에 들어간 값은 then으로 전달
+               }, 1000)
+            }) //promise 객체 리턴
+         }
+         // promise의 then을 이용하면 순차적으로 실행할 수 있다.
+         asyncTask()
+            .then((result) => {
+               console.log(result)
+               return result + ' next' // 다음 then으로 전달
+            })
+            .then((result) => {
+               console.log(result) // 직전 then에서 리턴해준 값
+            })
+         console.log('Task out')
+      </script>
+   </body>
+</html>

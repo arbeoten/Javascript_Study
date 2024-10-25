@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <h3>좋아하는 애완동물을 선택해주세요</h3>
+      <input type="radio" name="pet" value="강아지" />
+      <label for="pet">강아지</label>
+      <input type="radio" name="pet" value="고양이" />
+      <label for="pet">고양이</label>
+      <input type="radio" name="pet" value="햄스터" />
+      <label for="pet">햄스터</label>
+      <input type="radio" name="pet" value="기타" />
+      <label for="pet">기타</label>
+      <hr />
+      <h3 id="output"></h3>
+      <script>
+         const output = document.querySelector('#output')
+         const radios = document.querySelectorAll('[name=pet]')
+
+         radios.forEach((radio) => {
+            radio.addEventListener('change', (e) => {
+               if (e.target.checked) {
+                  // radio 버튼의 value 속성값을 가져온다
+                  output.textContent = `좋아하는 애완동물은 ${e.currentTarget.value}입니다`
+               }
+            })
+         })
+      </script>
+   </body>
+</html>

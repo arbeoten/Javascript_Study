@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         try {
+            const array = new Array(999999999999999) // 배열 사이즈 지정해 빈배열 생성
+         } catch (e) {
+            console.log(e)
+            console.log(e.name)
+            console.log(e.message)
+         }
+      </script>
+   </body>
+</html>

@@ -9,11 +9,13 @@
       <script>
          const h1 = document.querySelector('h1')
          const print = (event) => {
+            // 이벤트 객체: 이벤트가 발생했을때 이벤트가 발생한 요소에 대한 정보가 들어있다
             console.log(event.altKey)
             console.log(event.ctrlKey)
             console.log(event.shiftKey)
-            console.log(event.code)
-            console.log(event.KeyCode)
+            console.log(event.code) // 누른 키에 대한 정보를 반환
+            // console.log(event.KeyCode) 최신 브라우저에선 사용되지 않음
+            console.log(event.key) // 누른 키 자체를 반환(같은 역할을 하는 키는 동일값 1=Numpad1)
          }
          // 문서 전체에 이벤트 입력
          document.addEventListener('keydown', print)

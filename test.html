@@ -7,35 +7,93 @@
    </head>
    <body>
       <script>
-         let x = 5525
-         let y = 1255
-         let xArr = []
-         let yArr = []
-         let arr = []
-         while (x >= 1) {
-            xArr.push(Math.floor(x % 10))
-            x = x / 10
-         }
-         while (y >= 1) {
-            yArr.push(Math.floor(y % 10))
-            y = y / 10
-         }
-         console.log(xArr)
-         console.log(yArr)
-         xArr.forEach((num) => {
-            if (yArr.indexOf(num) != -1) {
-               yArr.splice(yArr.indexOf(num), 1)
-               arr.push(num)
+         function solution(park, routes) {
+            var answer = []
+            var x
+            var y
+            var stone = true
+
+            for (i in park) {
+               if (park[i].indexOf('S') != -1) {
+                  x = Number(i)
+                  y = park[i].indexOf('S')
+                  break
+               }
             }
-         })
-         arr.sort().reverse()
-         let answer = ''
-         for (i of arr) {
-            answer += i
+            for (route of routes) {
+               var dir = route.split(' ')[0]
+               var km = Number(route.split(' ')[1])
+
+               if (dir == 'N') {
+                  if (x - km < 0) {
+                  } else {
+                     for (var i = x; i > x - km; i--) {
+                        if (park[i][y] == 'X') {
+                           stone = false
+                           break
+                        }
+                     }
+                     if (stone == false) {
+                     } else {
+                        x = x - km
+                     }
+                  }
+               }
+
+               if (dir == 'S') {
+                  if (x + km >= park.length) {
+                  } else {
+                     for (var i = x; i < x + km; i++) {
+                        if (park[i][y] == 'X') {
+                           stone = false
+                           break
+                        }
+                     }
+                     if (stone == false) {
+                     } else {
+                        x = x + km
+                     }
+                  }
+               }
+
+               if (dir == 'W') {
+                  if (y - km < 0) {
+                  } else {
+                     for (var i = y; i > y - km; i--) {
+                        if (park[x][i] == 'X') {
+                           stone = false
+                           break
+                        }
+                     }
+                     if (stone == false) {
+                     } else {
+                        y = y - km
+                     }
+                  }
+               }
+
+               if (dir == 'E') {
+                  if (y + km >= park[0].length) {
+                  } else {
+                     for (var i = y; i < y + km; i++) {
+                        if (park[x][i] == 'X') {
+                           stone = false
+                           break
+                        }
+                     }
+                     if (stone == false) {
+                     } else {
+                        y = y + km
+                     }
+                  }
+               }
+               stone = true
+            }
+            answer = [x, y]
+            return answer
          }
-         if (answer == '') answer = '-1'
-         if (answer[0] == '0') answer = '0'
-         console.log(answer)
+
+         console.log(solution(['OSO', 'OOO', 'OXO', 'OOO'], ['E 2', 'S 3', 'W 1']))
       </script>
    </body>
 </html>

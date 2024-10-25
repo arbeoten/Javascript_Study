@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         function asyncTask() {
+            return new Promise((resolve, reject) => {
+               setTimeout(() => {
+                  const success = true // 작업 성공
+                  if (success) {
+                     resolve('Task success')
+                  } else {
+                     reject('Task failed')
+                  }
+               }, 1000)
+            })
+         }
+         asyncTask()
+            .then((result) => {
+               console.log(result)
+            })
+            .catch((error) => {
+               console.log(error)
+            })
+      </script>
+   </body>
+</html>
