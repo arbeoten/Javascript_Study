@@ -24,9 +24,86 @@ p {
    margin: 0;
 }
 
+/* main */
+
+main .container {
+   padding: 40px 0;
+}
+
+/* 카드 길이 안맞는 부분 수정 */
+
+main .container .row .card {
+   height: 100%;
+}
+main .container .row .card a {
+   height: 80%;
+}
+main .container .row .card img {
+   height: 100%;
+   object-fit: cover; /* 이미지를 높이에 맞추고 너비를 자동으로 조절 (이미지 비율 무시) */
+}
+
+/* detail.html */
+
+main .container .movie-detail > ul.movie-info,
+p {
+   margin-bottom: 10px !important;
+}
+
+main .container ul.movie-info {
+   display: flex;
+}
+
+main .container ul.movie-info li {
+   padding-right: 13px;
+}
+
 /* footer */
 footer {
    height: 100px;
    line-height: 100px;
    background-color: #f2f2f2;
+}
+
+/* media query */
+
+@media (min-width: 576px) and (max-width: 767px) {
+   .col-sm-9 {
+      width: 60%;
+   }
+
+   .col-sm-3 {
+      width: 40%;
+   }
+
+   main .container ul.movie_info {
+      display: initial; /* flex 해제 */
+   }
+
+   main .container ul.movie-info li {
+      padding-bottom: 10px;
+   }
+}
+
+/* tv project */
+
+.tv-overview {
+   text-overflow: ellipsis;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 4;
+}
+
+.card-img-left {
+   max-width: 100%;
+}
+@media (max-width: 575px) {
+   .tvPro-card {
+      flex-direction: column !important;
+   }
+}
+
+.tvDetail-pro {
+   border: 1px solid silver;
 }
